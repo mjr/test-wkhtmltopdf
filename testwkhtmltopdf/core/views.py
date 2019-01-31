@@ -11,7 +11,7 @@ except:
 
 
 def home(request):
-    pdf = pdfkit.from_url('http://google.com', False)
+    pdf = pdfkit.from_url('http://google.com', False, configuration=config)
     response = HttpResponse(pdf)
     response['Content-Type'] = 'application/pdf'
     response['Content-Disposition'] = 'inline; filename=out.pdf'
